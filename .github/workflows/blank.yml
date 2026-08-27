@@ -50,7 +50,7 @@ jobs:
             -v \
             -keystore release.keystore \
             -storepass emolauncher \
-            -alias emolauncher \
+            -alias upload \
             -keypass emolauncher \
             -keyalg RSA \
             -keysize 2048 \
