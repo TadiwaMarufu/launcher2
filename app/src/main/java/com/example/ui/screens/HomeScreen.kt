@@ -23,6 +23,7 @@ import com.example.model.LauncherConfig
 import com.example.ui.components.*
 import com.example.ui.theme.EmoCyan
 import com.example.ui.theme.EmoMutedGray
+import androidx.compose.foundation.background
 
 @Composable
 fun HomeScreen(
