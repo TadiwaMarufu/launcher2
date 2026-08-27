@@ -73,44 +73,11 @@ jobs:
         run: |
           mkdir -p release
           cp app/build/outputs/apk/release/*.apk \
-             release/EmoLauncher-release.apk
+            release/EmoLauncher-release.apk
 
       - name: Upload release APK
         uses: actions/upload-artifact@v4
         with:
           name: EmoLauncher-release
           path: release/EmoLauncher-release.apk
-          if-no-files-found: error      - name: Make Gradle wrapper executable
-        run: chmod +x ./gradlew
-
-      - name: Generate release keystore
-        run: |
-          keytool -genkeypair \
-            -v \
-            -keystore release.keystore \
-            -storepass emolauncher \
-            -alias emolauncher \
-            -keypass emolauncher \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -dname "CN=EmoLauncher,O=EmoLauncher,C=ZW"
-
-      - name: Build release APK
-        env:
-          KEYSTORE_PATH: ${{ github.workspace }}/release.keystore
-          STORE_PASSWORD: emolauncher
-          KEY_PASSWORD: emolauncher
-        run: ./gradlew assembleRelease --stacktrace
-
-      - name: Rename APK
-        run: |
-          mv app/build/outputs/apk/release/*.apk \
-             app/build/outputs/apk/release/EmoLauncher-release.apk
-
-      - name: Upload release APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: EmoLauncher-release
-          path: app/build/outputs/apk/release/EmoLauncher-release.apk
           if-no-files-found: error
