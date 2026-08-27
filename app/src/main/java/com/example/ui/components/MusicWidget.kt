@@ -25,6 +25,7 @@ import com.example.ui.theme.EmoCyan
 import com.example.ui.theme.EmoLime
 import com.example.ui.theme.EmoMutedGray
 import com.example.ui.theme.EmoSoftWhite
+import androidx.compose.foundation.border
 
 data class MediaTrackState(
     val title: String = "Midnight Protocol",
