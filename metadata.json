@@ -1,0 +1,6 @@
+{
+  "name": "EmoLauncher",
+  "description": "Minimalist, fluid Android launcher with Liquid Glass materials, terminal aesthetics, and deep customization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
